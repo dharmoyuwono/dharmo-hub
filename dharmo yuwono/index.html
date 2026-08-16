@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dharmo Hub: Career Readiness & Psikologi Kewirausahaan</title>
+<meta name="description" content="Portofolio & katalog produk program Pemberdayaan Remaja Panti Asuhan Dharmo Yuwono Purwokerto melalui Career Readiness berbasis Psikologi Kewirausahaan.">
+
+<!-- Tailwind CSS via CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+<!-- Google Fonts: Fraunces (display, hangat & humanis) + Plus Jakarta Sans (body/UI) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          ink:      '#1F2D28',   // teks utama, hijau tua kepercayaan
+          cream:    '#FBFAF5',   // dasar hangat
+          harbor:   '#2E6F9E',   // biru — harapan, cakrawala
+          harborLt: '#EAF3F9',
+          sprout:   '#4C9A6A',   // hijau — pertumbuhan
+          sproutLt: '#E4F2E9',
+          amber:    '#E39A3C',   // aksen hangat — CTA, sorotan
+          amberLt:  '#FBEBD3',
+        },
+        fontFamily: {
+          display: ['"Fraunces"', 'serif'],
+          body: ['"Plus Jakarta Sans"', 'sans-serif'],
+        },
+        borderRadius: {
+          organic: '42% 58% 65% 35% / 45% 40% 60% 55%',
+        },
+      }
+    }
+  }
+</script>
+
+<style>
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .font-display { font-family: 'Fraunces', serif; }
+
+  /* Efek reveal saat discroll */
+  .reveal { opacity: 0; transform: translateY(18px); transition: opacity .6s ease, transform .6s ease; }
+  .reveal.in-view { opacity: 1; transform: translateY(0); }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+  }
+
+  /* Fokus keyboard terlihat jelas */
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid #E39A3C;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: #EAF3F9; }
+  ::-webkit-scrollbar-thumb { background: #4C9A6A; border-radius: 8px; }
+</style>
+</head>
+
+<body class="bg-cream text-ink antialiased">
+
+<!-- ============ HEADER & NAVIGASI ============ -->
+<header id="top" class="fixed top-0 inset-x-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-harbor/10">
+  <div class="max-w-7xl mx-auto px-5 md:px-8">
+    <div class="flex items-center justify-between h-20">
+
+      <!-- Wordmark situs (logo mitra dipindahkan ke bawah judul di Hero Section) -->
+      <a href="#top" class="font-display font-semibold text-xl md:text-2xl text-ink shrink-0">
+        Dharmo <span class="text-harbor">Hub</span>
+      </a>
+
+      <!-- Navigasi Desktop -->
+      <nav class="hidden lg:flex items-center gap-8 font-semibold text-sm text-ink/80">
+        <a href="#beranda" class="hover:text-harbor transition-colors">Beranda</a>
+        <a href="#profil-panti" class="hover:text-harbor transition-colors">Profil Panti</a>
+        <a href="#profil-remaja" class="hover:text-harbor transition-colors">Profil Remaja</a>
+        <a href="#galeri" class="hover:text-harbor transition-colors">Galeri</a>
+        <a href="#katalog-produk" class="hover:text-harbor transition-colors">Katalog Produk</a>
+        <a href="#kontak" class="hover:text-harbor transition-colors">Kontak</a>
+        <a href="#katalog-produk" class="bg-sprout text-white px-5 py-2.5 rounded-full hover:bg-sprout/90 transition-colors shadow-sm">
+          Dukung Kami
+        </a>
+      </nav>
+
+      <!-- Tombol menu mobile -->
+      <button id="menuBtn" aria-label="Buka menu navigasi" aria-expanded="false" class="lg:hidden p-2 -mr-2 text-harbor">
+        <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Menu Mobile -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-harbor/10 bg-cream px-5 pb-6 pt-2">
+    <nav class="flex flex-col gap-1 font-semibold text-ink/80">
+      <a href="#beranda" class="py-3 border-b border-harbor/10">Beranda</a>
+      <a href="#profil-panti" class="py-3 border-b border-harbor/10">Profil Panti</a>
+      <a href="#profil-remaja" class="py-3 border-b border-harbor/10">Profil Remaja</a>
+      <a href="#galeri" class="py-3 border-b border-harbor/10">Galeri</a>
+      <a href="#katalog-produk" class="py-3 border-b border-harbor/10">Katalog Produk</a>
+      <a href="#kontak" class="py-3">Kontak</a>
+      <a href="#katalog-produk" class="mt-3 text-center bg-sprout text-white px-5 py-3 rounded-full">Dukung Kami</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO SECTION ============ -->
+<section id="beranda" class="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden">
+
+  <!-- Bentuk organik dekoratif (motif tunas/pertumbuhan) -->
+  <div class="pointer-events-none absolute -top-16 -right-24 w-96 h-96 bg-sproutLt rounded-organic opacity-70 blur-0"></div>
+  <div class="pointer-events-none absolute top-40 -left-20 w-72 h-72 bg-harborLt rounded-organic opacity-70"></div>
+
+  <div class="relative max-w-5xl mx-auto px-5 md:px-8 text-center">
+    <span class="inline-flex items-center gap-2 bg-amberLt text-amber font-bold text-xs tracking-wide uppercase px-4 py-1.5 rounded-full mb-6">
+      Program Pengabdian Masyarakat
+    </span>
+
+    <h1 class="font-display font-semibold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-[1.15] text-ink">
+      Dharmo Hub:
+      <span class="italic text-harbor">Career Readiness</span>
+      & Psikologi Kewirausahaan
+    </h1>
+
+    <!-- Strip logo mitra: Panti, UMP, DIKTISAINTEK, BIMA -->
+    <!-- PLACEHOLDER LOGO: ganti src di 4 <img> berikut dengan file logo asli (disarankan PNG transparan, tinggi ±40px) -->
+    <div class="mt-8 flex flex-wrap items-center justify-center gap-4 md:gap-6">
+      <img src="panti-logo.png" alt="Logo Panti Asuhan Dharmo Yuwono" class="h-9 md:h-11 w-auto object-contain" />
+      <span class="hidden sm:block h-7 w-px bg-harbor/20"></span>
+      <img src="ump-logo.png" alt="Logo Universitas Muhammadiyah Purwokerto" class="h-9 md:h-11 w-auto object-contain" />
+      <span class="hidden sm:block h-7 w-px bg-harbor/20"></span>
+      <img src="dikti-logo.png" alt="Logo DIKTISAINTEK" class="h-9 md:h-11 w-auto object-contain" />
+      <span class="hidden sm:block h-7 w-px bg-harbor/20"></span>
+      <img src="bima-logo.png" alt="Logo BIMA" class="h-9 md:h-11 w-auto object-contain" />
+    </div>
+
+    <p class="mt-8 text-base md:text-lg text-ink/70 max-w-2xl mx-auto">
+      Membangun kemandirian kerja dan kesejahteraan psikososial remaja
+      <span class="font-semibold text-ink">Panti Asuhan Dharmo Yuwono Purwokerto</span>
+      — satu langkah kecil menuju masa depan yang mereka rancang sendiri.
+    </p>
+
+    <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#katalog-produk" class="w-full sm:w-auto bg-harbor text-white font-semibold px-7 py-3.5 rounded-full hover:bg-harbor/90 transition-colors shadow-md shadow-harbor/20">
+        Lihat Katalog Produk
+      </a>
+      <a href="#kontak" class="w-full sm:w-auto bg-white border-2 border-sprout text-sprout font-semibold px-7 py-3.5 rounded-full hover:bg-sproutLt transition-colors">
+        Dukung Kami
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 1: TENTANG PROGRAM ============ -->
+<section id="tentang" class="reveal py-20 md:py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-5 gap-12 items-start">
+
+    <div class="lg:col-span-2">
+      <span class="text-sprout font-bold text-sm tracking-wide uppercase">Tentang Program</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 leading-tight">
+        Kesiapan karier yang tumbuh dari pemahaman diri
+      </h2>
+      <p class="mt-5 text-ink/70 leading-relaxed">
+        Model <span class="font-semibold text-ink">Career Readiness berbasis Psikologi Kewirausahaan</span>
+        memadukan penguatan mental, pengenalan potensi diri, dan keterampilan
+        wirausaha praktis. Remaja tidak hanya dibekali keterampilan membuat
+        produk, tetapi juga kesiapan psikologis untuk menghadapi dunia kerja
+        dan berwirausaha secara mandiri.
+      </p>
+    </div>
+
+    <div class="lg:col-span-3 grid sm:grid-cols-3 gap-5">
+      <div class="bg-harborLt rounded-2xl p-6">
+        <div class="w-11 h-11 rounded-full bg-harbor text-white flex items-center justify-center font-display font-semibold">1</div>
+        <h3 class="font-display font-semibold text-lg mt-4">Kesiapan Mental</h3>
+        <p class="text-sm text-ink/60 mt-2 leading-relaxed">Membangun rasa percaya diri, ketahanan psikologis, dan pola pikir bertumbuh.</p>
+      </div>
+      <div class="bg-sproutLt rounded-2xl p-6">
+        <div class="w-11 h-11 rounded-full bg-sprout text-white flex items-center justify-center font-display font-semibold">2</div>
+        <h3 class="font-display font-semibold text-lg mt-4">Keterampilan Wirausaha</h3>
+        <p class="text-sm text-ink/60 mt-2 leading-relaxed">Pelatihan produksi, pengemasan, dan pengelolaan usaha kecil sehari-hari.</p>
+      </div>
+      <div class="bg-amberLt rounded-2xl p-6">
+        <div class="w-11 h-11 rounded-full bg-amber text-white flex items-center justify-center font-display font-semibold">3</div>
+        <h3 class="font-display font-semibold text-lg mt-4">Jejaring Pemasaran</h3>
+        <p class="text-sm text-ink/60 mt-2 leading-relaxed">Pendampingan pemasaran produk agar hasil karya bernilai ekonomi nyata.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 1B: PROFIL PANTI ============ -->
+<section id="profil-panti" class="reveal py-20 md:py-28 bg-harborLt/40">
+  <div class="max-w-6xl mx-auto px-5 md:px-8 grid lg:grid-cols-5 gap-12 items-center">
+
+    <!-- PLACEHOLDER FOTO: ganti dengan foto gedung/halaman depan panti asuhan (rasio 4:3) -->
+    <div class="lg:col-span-2">
+      <img src="panti-img.jpeg" alt="Foto Panti Asuhan Dharmo Yuwono" class="w-full rounded-2xl object-cover aspect-[4/3]" />
+    </div>
+
+    <div class="lg:col-span-3">
+      <span class="text-harbor font-bold text-sm tracking-wide uppercase">Profil Panti</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3 leading-tight">
+        Panti Asuhan Dharmo Yuwono Purwokerto
+      </h2>
+      <p class="mt-5 text-ink/70 leading-relaxed">
+        <!-- PLACEHOLDER TEKS: sesuaikan dengan profil, sejarah singkat, visi & misi panti asuhan yang sebenarnya -->
+        Panti Asuhan Dharmo Yuwono telah lama menjadi rumah bagi anak-anak dan
+        remaja yang membutuhkan pengasuhan, pendidikan, dan bekal hidup mandiri.
+        Melalui program ini, panti berkolaborasi dengan tim pengabdian untuk
+        membekali para remaja binaannya dengan keterampilan wirausaha dan
+        kesiapan psikologis menghadapi dunia kerja.
+      </p>
+
+      <!-- PLACEHOLDER STATISTIK: sesuaikan angka dengan data panti yang sebenarnya -->
+      <div class="mt-8 grid grid-cols-3 gap-4">
+        <div class="bg-white rounded-xl p-4 text-center border border-ink/5">
+          <p class="font-display text-2xl md:text-3xl font-semibold text-harbor">30+</p>
+          <p class="text-xs text-ink/60 mt-1">Anak Asuh</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border border-ink/5">
+          <p class="font-display text-2xl md:text-3xl font-semibold text-sprout">15</p>
+          <p class="text-xs text-ink/60 mt-1">Remaja di Program</p>
+        </div>
+        <div class="bg-white rounded-xl p-4 text-center border border-ink/5">
+          <p class="font-display text-2xl md:text-3xl font-semibold text-amber">5</p>
+          <p class="text-xs text-ink/60 mt-1">Jenis Produk Karya</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 2: PROFIL REMAJA ============ -->
+<section id="profil-remaja" class="reveal py-20 md:py-28 bg-cream">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-harbor font-bold text-sm tracking-wide uppercase">Profil Remaja</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3">Wajah-wajah di Balik Program Ini</h2>
+      <p class="mt-4 text-ink/70">Setiap remaja membawa bakat dan mimpinya masing-masing. Berikut sebagian kecil dari perjalanan mereka.</p>
+    </div>
+
+    <!-- CARA MENAMBAH/MENGURANGI KARTU PROFIL: salin satu blok <article>...</article> lengkap
+         untuk menambah, atau hapus satu blok untuk mengurangi. Ganti isi src, nama, minat/bakat,
+         dan kutipan pada setiap kartu. Grid akan otomatis menyesuaikan jumlah kolom. -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+      <!-- PLACEHOLDER FOTO: ganti src img di setiap kartu dengan foto asli anak panti (rasio 1:1, sudah ada izin publikasi) -->
+      <!-- Kartu Profil 1 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="ragil.png" alt="Foto potret remaja 1" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Ragil Prasetya</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-sprout bg-sproutLt px-2.5 py-1 rounded-full">Koordinator Kelompok</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku belajar memimpin dan mengatur pembagian tugas teman-teman."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 2 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="rijal.png" alt="Foto potret remaja 2" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Rijal Rasendriya Bawana</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-harbor bg-harborLt px-2.5 py-1 rounded-full">Barista & Desain</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Ingin punya usaha kecil sendiri suatu hari nanti, sekarang aku sudah mulai belajar mengemas produk."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 3 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="satriya.png" alt="Foto potret remaja 3" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Satriya</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-amber bg-amberLt px-2.5 py-1 rounded-full">Fotografi Produk</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku suka motret produk-produk kita biar keliatan menarik saat dijual."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 4 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="shoima.png" alt="Foto potret remaja 4" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Shoimatur Rokhmah</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-sprout bg-sproutLt px-2.5 py-1 rounded-full">Sablon & Merchandise</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku jadi tahu langkah demi langkah untuk siap kerja, nggak cuma bisa bikin produk."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 5 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="salsa.png" alt="Foto potret remaja 5" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Salsabila</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-amber bg-amberLt px-2.5 py-1 rounded-full">Rangkai Buket</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Program ini bikin aku lebih percaya diri ngobrol sama pembeli dan menawarkan produk."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 6 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="aisyah.png" alt="Foto potret remaja 6" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Aisyah Suci Ramadhani</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-sprout bg-sproutLt px-2.5 py-1 rounded-full">Pengelolaan Keuangan</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Sekarang aku bisa hitung untung rugi jualan sendiri, nggak asal jual saja."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 7 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="davina.png" alt="Foto potret remaja 7" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Davina Aryani</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-harbor bg-harborLt px-2.5 py-1 rounded-full">Rajut & Aksesoris</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Keychain rajutan pertamaku laku, dari situ aku makin semangat belajar."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 8 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="latifah.png" alt="Foto potret remaja 8" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Latifah</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-amber bg-amberLt px-2.5 py-1 rounded-full">Desain Kemasan</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Belajar desain bikin aku pede kalau nanti mau kerja di bidang kreatif."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 9 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="kariana.png" alt="Foto potret remaja 9" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Kariana Safitri</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-sprout bg-sproutLt px-2.5 py-1 rounded-full">Rangkai Hampers</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Menyusun hampers itu melatih kesabaran dan ketelitianku."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 10 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="hilal.png" alt="Foto potret remaja 10" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Nur Fatah Hilal</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-harbor bg-harborLt px-2.5 py-1 rounded-full">Media Sosial</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku pegang akun media sosial produk kita, seru bisa lihat respon pembeli."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 11 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="hilda.png" alt="Foto potret remaja 11" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Hilda Sabrina</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-amber bg-amberLt px-2.5 py-1 rounded-full">Layanan Pelanggan</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku belajar cara membalas chat pembeli dengan sopan dan cepat."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 12 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="sekar.png" alt="Foto potret remaja 12" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Sekar Kinasih</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-sprout bg-sproutLt px-2.5 py-1 rounded-full">Kerajinan Tangan</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku belajar kalau bikin totebag itu bisa jadi bekal usaha, bukan cuma hobi."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 13 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="azzura.png" alt="Foto potret remaja 13" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Azzura Helga Lutfiana</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-harbor bg-harborLt px-2.5 py-1 rounded-full">Buket Snack</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Merangkai buket snack ngajarin aku kreatif pakai bahan seadanya."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 14 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="aziz.png" alt="Foto potret remaja 14" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Mukhammad Khayyun Aziz</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-amber bg-amberLt px-2.5 py-1 rounded-full">Produksi Tumbler</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku jadi paham proses dari bahan mentah sampai produk siap jual."</p>
+        </div>
+      </article>
+
+      <!-- Kartu Profil 15 -->
+      <article class="bg-white rounded-2xl overflow-hidden border border-ink/5 hover:shadow-lg transition-shadow">
+        <img src="alya.png" alt="Foto potret remaja 15" class="w-full aspect-square object-cover" />
+        <div class="p-5">
+          <h3 class="font-display font-semibold text-lg">Alya Rahma Fazila</h3>
+          <span class="inline-block mt-1 text-xs font-semibold text-sprout bg-sproutLt px-2.5 py-1 rounded-full">Layanan Pelanggan</span>
+          <p class="mt-3 text-sm text-ink/60 italic leading-relaxed">"Aku jadi tahu bagaimana cara merespon pembeli dengan baik"</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 3: GALERI DOKUMENTASI KEGIATAN ============ -->
+<section id="galeri" class="reveal py-20 md:py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-amber font-bold text-sm tracking-wide uppercase">Dokumentasi</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3">Galeri Kegiatan</h2>
+      <p class="mt-4 text-ink/70">Momen-momen dari rangkaian pelatihan, produksi, hingga pemasaran bersama remaja Panti Asuhan Dharmo Yuwono.</p>
+    </div>
+
+    <!-- CARA MENAMBAH/MENGURANGI FOTO GALERI: salin/hapus satu blok <div class="group ..."> ...</div>
+         untuk tiap foto. Ganti src dan caption di dalam overlay teksnya. -->
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+
+      <!-- PLACEHOLDER FOTO KEGIATAN: ganti src dengan foto dokumentasi asli -->
+      <div class="group relative rounded-2xl overflow-hidden aspect-square">
+        <img src="pengabdian1.jpg" alt="Dokumentasi kegiatan pelatihan mental" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <p class="text-white text-sm font-semibold">Sesi Pelatihan Mengenal Potensi Diri</p>
+        </div>
+      </div>
+
+      <div class="group relative rounded-2xl overflow-hidden aspect-square">
+        <img src="pengabdian2.jpg" alt="Dokumentasi kegiatan produksi" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <p class="text-white text-sm font-semibold">Sesi Pelatihan Career Passport</p>
+        </div>
+      </div>
+
+      <div class="group relative rounded-2xl overflow-hidden aspect-square">
+        <img src="pengabdian 3.jpg" alt="Dokumentasi kegiatan pemasaran" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <p class="text-white text-sm font-semibold">Sesi Pelatihan Mental</p>
+        </div>
+      </div>
+
+      <div class="group relative rounded-2xl overflow-hidden aspect-square">
+        <img src="pengabdian4.jpeg" alt="Dokumentasi kegiatan pameran produk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <p class="text-white text-sm font-semibold">Dokumentasi Bersama</p>
+        </div>
+      </div>
+
+      <div class="group relative rounded-2xl overflow-hidden aspect-square">
+        <img src="pengabdian5.jpeg" alt="Dokumentasi kegiatan pendampingan kelompok" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <p class="text-white text-sm font-semibold">Pendampingan Kelompok</p>
+        </div>
+      </div>
+
+      <div class="group relative rounded-2xl overflow-hidden aspect-square">
+        <img src="pengabdian6.jpeg" alt="Dokumentasi kegiatan penyerahan produk" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+        <div class="absolute inset-0 bg-gradient-to-t from-ink/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+          <p class="text-white text-sm font-semibold">Pendampingan Kelompok</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ SECTION 4: KATALOG PRODUK ============ -->
+<section id="katalog-produk" class="reveal py-20 md:py-28 bg-sproutLt/40">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="text-center max-w-2xl mx-auto mb-14">
+      <span class="text-sprout font-bold text-sm tracking-wide uppercase">Katalog Produk</span>
+      <h2 class="font-display text-3xl md:text-4xl font-semibold mt-3">Karya Tangan, Bekal Kemandirian</h2>
+      <p class="mt-4 text-ink/70">Setiap pembelian adalah dukungan langsung untuk masa depan para remaja Panti Asuhan Dharmo Yuwono.</p>
+    </div>
+
+    <!-- CARA MENAMBAH/MENGURANGI PRODUK: salin satu blok <div class="bg-white rounded-2xl ...">...</div>
+         lengkap (dari komentar "Produk N" sampai penutup </div> sebelum blok produk berikutnya) untuk
+         menambah produk baru, atau hapus satu blok untuk mengurangi. Grid akan otomatis menyesuaikan
+         jumlah kolom sendiri — tidak perlu ubah class grid di atas. Untuk tiap kartu, ganti 3 hal saja:
+         1) src foto produk, 2) nama produk (<h3>), 3) harga (<p>), dan opsional teks pesan di link WhatsApp. -->
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+
+      <!-- Produk 1: Tumbler -->
+      <!-- PLACEHOLDER FOTO PRODUK: ganti src dengan foto produk asli (rasio 1:1) -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-ink/5 flex flex-col">
+        <img src="buketbunga.jpeg" alt="Foto produk Tumbler" class="w-full aspect-square object-cover" />
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-display font-semibold">Buket Bunga</h3>
+          <p class="text-harbor font-bold mt-1">Rp35.000</p>
+          <a href="https://wa.me/6285940771435?text=Halo%2C%20saya%20ingin%20memesan%20Tumbler%20Dharmo%20Yuwono"
+             target="_blank" rel="noopener"
+             class="mt-auto pt-4 inline-flex items-center justify-center gap-2 bg-sprout text-white text-sm font-semibold py-2.5 rounded-full hover:bg-sprout/90 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.345 4.997L2 22l5.13-1.345a9.958 9.958 0 004.874 1.24h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.929-7.069a9.928 9.928 0 00-7.072-2.826zm5.845 15.842a8.267 8.267 0 01-5.845 2.412h-.003a8.28 8.28 0 01-4.223-1.156l-.303-.18-3.045.799.813-2.968-.198-.305a8.264 8.264 0 01-1.267-4.412c0-4.568 3.716-8.284 8.288-8.284a8.24 8.24 0 015.86 2.428 8.234 8.234 0 012.425 5.86 8.279 8.279 0 01-2.502 5.806z"/></svg>
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Produk 2: Buket Snack -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-ink/5 flex flex-col">
+        <img src="buketsnack.jpg" alt="Foto produk Buket Snack" class="w-full aspect-square object-cover" />
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-display font-semibold">Buket Snack</h3>
+          <p class="text-harbor font-bold mt-1">Rp75.000</p>
+          <a href="https://wa.me/6285940771435?text=Halo%2C%20saya%20ingin%20memesan%20Buket%20Snack"
+             target="_blank" rel="noopener"
+             class="mt-auto pt-4 inline-flex items-center justify-center gap-2 bg-sprout text-white text-sm font-semibold py-2.5 rounded-full hover:bg-sprout/90 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.345 4.997L2 22l5.13-1.345a9.958 9.958 0 004.874 1.24h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.929-7.069a9.928 9.928 0 00-7.072-2.826zm5.845 15.842a8.267 8.267 0 01-5.845 2.412h-.003a8.28 8.28 0 01-4.223-1.156l-.303-.18-3.045.799.813-2.968-.198-.305a8.264 8.264 0 01-1.267-4.412c0-4.568 3.716-8.284 8.288-8.284a8.24 8.24 0 015.86 2.428 8.234 8.234 0 012.425 5.86 8.279 8.279 0 01-2.502 5.806z"/></svg>
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Produk 3: Hampers -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-ink/5 flex flex-col">
+        <img src="hampers.jpg" alt="Foto produk Hampers" class="w-full aspect-square object-cover" />
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-display font-semibold">Hampers Spesial</h3>
+          <p class="text-harbor font-bold mt-1">Rp110.000</p>
+          <a href="https://wa.me/62859407714356285940771435?text=Halo%2C%20saya%20ingin%20memesan%20Hampers%20Spesial"
+             target="_blank" rel="noopener"
+             class="mt-auto pt-4 inline-flex items-center justify-center gap-2 bg-sprout text-white text-sm font-semibold py-2.5 rounded-full hover:bg-sprout/90 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.345 4.997L2 22l5.13-1.345a9.958 9.958 0 004.874 1.24h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.929-7.069a9.928 9.928 0 00-7.072-2.826zm5.845 15.842a8.267 8.267 0 01-5.845 2.412h-.003a8.28 8.28 0 01-4.223-1.156l-.303-.18-3.045.799.813-2.968-.198-.305a8.264 8.264 0 01-1.267-4.412c0-4.568 3.716-8.284 8.288-8.284a8.24 8.24 0 015.86 2.428 8.234 8.234 0 012.425 5.86 8.279 8.279 0 01-2.502 5.806z"/></svg>
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Produk 4: Totebag -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-ink/5 flex flex-col">
+        <img src="totebag.jpg" alt="Foto produk Totebag" class="w-full aspect-square object-cover" />
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-display font-semibold">Totebag Kanvas</h3>
+          <p class="text-harbor font-bold mt-1">Rp55.000</p>
+          <a href="https://wa.me/6285940771435?text=Halo%2C%20saya%20ingin%20memesan%20Totebag%20Kanvas"
+             target="_blank" rel="noopener"
+             class="mt-auto pt-4 inline-flex items-center justify-center gap-2 bg-sprout text-white text-sm font-semibold py-2.5 rounded-full hover:bg-sprout/90 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.345 4.997L2 22l5.13-1.345a9.958 9.958 0 004.874 1.24h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.929-7.069a9.928 9.928 0 00-7.072-2.826zm5.845 15.842a8.267 8.267 0 01-5.845 2.412h-.003a8.28 8.28 0 01-4.223-1.156l-.303-.18-3.045.799.813-2.968-.198-.305a8.264 8.264 0 01-1.267-4.412c0-4.568 3.716-8.284 8.288-8.284a8.24 8.24 0 015.86 2.428 8.234 8.234 0 012.425 5.86 8.279 8.279 0 01-2.502 5.806z"/></svg>
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+      <!-- Produk 5: Keychain -->
+      <div class="bg-white rounded-2xl overflow-hidden border border-ink/5 flex flex-col">
+        <img src="kerajinan.jpeg" alt="Foto produk Keychain" class="w-full aspect-square object-cover" />
+        <div class="p-5 flex flex-col flex-1">
+          <h3 class="font-display font-semibold">Kerajinan Tangan</h3>
+          <p class="text-harbor font-bold mt-1">Rp20.000</p>
+          <a href="https://wa.me/6285940771435?text=Halo%2C%20saya%20ingin%20memesan%20Keychain%20Rajut"
+             target="_blank" rel="noopener"
+             class="mt-auto pt-4 inline-flex items-center justify-center gap-2 bg-sprout text-white text-sm font-semibold py-2.5 rounded-full hover:bg-sprout/90 transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4 fill-current"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12.004 2.003c-5.514 0-9.997 4.483-9.997 9.997 0 1.762.464 3.484 1.345 4.997L2 22l5.13-1.345a9.958 9.958 0 004.874 1.24h.004c5.514 0 9.997-4.483 9.997-9.997 0-2.67-1.04-5.18-2.929-7.069a9.928 9.928 0 00-7.072-2.826zm5.845 15.842a8.267 8.267 0 01-5.845 2.412h-.003a8.28 8.28 0 01-4.223-1.156l-.303-.18-3.045.799.813-2.968-.198-.305a8.264 8.264 0 01-1.267-4.412c0-4.568 3.716-8.284 8.288-8.284a8.24 8.24 0 015.86 2.428 8.234 8.234 0 012.425 5.86 8.279 8.279 0 01-2.502 5.806z"/></svg>
+            Pesan Sekarang
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center text-xs text-ink/50 mt-8"></p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="kontak" class="bg-ink text-cream/80 pt-16 pb-8">
+  <div class="max-w-6xl mx-auto px-5 md:px-8">
+    <div class="grid md:grid-cols-3 gap-10 pb-10 border-b border-white/10">
+
+      <div>
+        <h3 class="font-display text-xl font-semibold text-white">Panti Asuhan Dharmo Yuwono</h3>
+        <p class="mt-3 text-sm leading-relaxed">
+          <!-- PLACEHOLDER ALAMAT: sesuaikan dengan alamat lengkap panti asuhan -->
+          Jl. Dr. Angka No. 33, Purwokerto Selatan,<br>
+          Kabupaten Banyumas, Jawa Tengah 53144
+        </p>
+        <p class="mt-4 text-sm">
+          Telp/WA: <a href="https://wa.me/6281234567890" class="underline hover:text-white">0812-3456-7890</a><br>
+          Email: <a href="mailto:dharmoyuwono@example.com" class="underline hover:text-white">dharmoyuwono@example.com</a>
+        </p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-xl font-semibold text-white">Tautan Cepat</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          <li><a href="#profil-panti" class="hover:text-white transition-colors">Profil Panti</a></li>
+          <li><a href="#profil-remaja" class="hover:text-white transition-colors">Profil Remaja</a></li>
+          <li><a href="#galeri" class="hover:text-white transition-colors">Galeri Kegiatan</a></li>
+          <li><a href="#katalog-produk" class="hover:text-white transition-colors">Katalog Produk</a></li>
+          <li><a href="#top" class="hover:text-white transition-colors">Kembali ke Atas</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-xl font-semibold text-white">Terima Kasih Kepada</h3>
+        <p class="mt-3 text-sm leading-relaxed">
+          Program ini terselenggara atas dukungan penuh dari:
+        </p>
+        <!-- PLACEHOLDER LOGO SPONSOR: ganti dengan logo asli, versi putih/monokrom agar kontras di footer gelap -->
+        <div class="mt-4 flex flex-wrap items-center gap-4">
+          <img src="https://placehold.co/70x36/2E6F9E/FBFAF5?text=BIMA" alt="Logo BIMA" class="h-8 w-auto object-contain" />
+          <img src="https://placehold.co/70x36/4C9A6A/FBFAF5?text=UMP" alt="Logo UMP" class="h-8 w-auto object-contain" />
+          <img src="https://placehold.co/110x36/E39A3C/FBFAF5?text=DIKTISAINTEK" alt="Logo DIKTISAINTEK" class="h-8 w-auto object-contain" />
+        </div>
+      </div>
+    </div>
+
+    <p class="text-center text-xs text-cream/50 pt-8">
+      © 2026 Program Pemberdayaan Remaja Panti Asuhan Dharmo Yuwono Purwokerto. Dibuat dengan penuh harapan.
+    </p>
+  </div>
+</footer>
+
+<!-- ============ JAVASCRIPT ============ -->
+<script>
+  // Toggle menu mobile
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const iconOpen = document.getElementById('iconOpen');
+  const iconClose = document.getElementById('iconClose');
+
+  menuBtn.addEventListener('click', () => {
+    const isHidden = mobileMenu.classList.contains('hidden');
+    mobileMenu.classList.toggle('hidden');
+    iconOpen.classList.toggle('hidden');
+    iconClose.classList.toggle('hidden');
+    menuBtn.setAttribute('aria-expanded', String(isHidden));
+  });
+
+  // Tutup menu mobile saat salah satu tautan diklik
+  document.querySelectorAll('#mobileMenu a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      iconOpen.classList.remove('hidden');
+      iconClose.classList.add('hidden');
+    });
+  });
+
+  // Reveal-on-scroll sederhana (dengan fallback agar konten tidak pernah tersembunyi permanen)
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+    revealEls.forEach(el => observer.observe(el));
+  } else {
+    // Browser lama tanpa dukungan IntersectionObserver: langsung tampilkan semua
+    revealEls.forEach(el => el.classList.add('in-view'));
+  }
+</script>
+
+</body>
+</html>
